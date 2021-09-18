@@ -27,6 +27,8 @@ public final class Constants {
      */
     public static final class Drive {
         public static final int kTalon = 1;
+        public static final int kVictor = 3;
+        public static final int kSparkMax = 5;
     }
 
     /**

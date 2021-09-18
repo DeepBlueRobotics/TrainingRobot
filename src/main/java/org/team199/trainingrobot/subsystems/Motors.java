@@ -21,8 +21,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  */
 public class Motors extends SubsystemBase {
   private final WPI_TalonSRX talon = MotorControllerFactory.createTalon(Constants.Drive.kTalon);
-  private final WPI_VictorSPX victor = MotorControllerFactory.createVictor(Constants.Drive.kTalon);
-  private final CANSparkMax sparkMax = MotorControllerFactory.createSparkMax(Constants.Drive.kTalon);
+  private final WPI_VictorSPX victor = MotorControllerFactory.createVictor(Constants.Drive.kVictor);
+  private final CANSparkMax sparkMax = MotorControllerFactory.createSparkMax(Constants.Drive.kSparkMax);
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   public Motors() {
