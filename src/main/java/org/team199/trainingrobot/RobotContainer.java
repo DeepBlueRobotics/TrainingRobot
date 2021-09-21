@@ -1,6 +1,7 @@
 package org.team199.trainingrobot;
 
 import org.team199.trainingrobot.commands.RunMotor;
+import org.team199.trainingrobot.commands.RunMotorsWithJoystick;
 import org.team199.trainingrobot.subsystems.Motors;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -17,6 +18,7 @@ public class RobotContainer {
         // set default commands here
     }
     private void configureButtonBindingsController() {
+        motors.setDefaultCommand(new RunMotorsWithJoystick(motors, controller));
         new JoystickButton(controller, Constants.OI.Controller.kRunMotorsButton).whenHeld(new RunMotor(motors));
     }
 

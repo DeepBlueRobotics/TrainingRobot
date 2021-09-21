@@ -4,27 +4,38 @@
 
 package org.team199.trainingrobot.commands;
 
+import org.team199.trainingrobot.subsystems.Motors;
+
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class RunMotorsWithJoystick extends CommandBase {
   /** Creates a new RunMotorsWithJoystick. */
-  public RunMotorsWithJoystick() {
+  private Motors motors;
+  private Joystick joystick;
+  public RunMotorsWithJoystick(Motors motors, Joystick joystick) {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(this.motors = motors);
+    this.joystick = joystick;
   }
 
-  // Called when the command is initially scheduled.
+// Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    
+
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+      motors.run(joystick.getY());
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    motors.run(0);
+  }
 
   // Returns true when the command should end.
   @Override
