@@ -28,7 +28,7 @@ public class RunMotorsWithJoystick extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      motors.run(joystick.getY());
+    motors.run(joystick.getY());
   }
 
   // Called once the command ends or is interrupted.

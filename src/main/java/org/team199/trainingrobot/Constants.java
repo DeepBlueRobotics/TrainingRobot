@@ -38,6 +38,7 @@ public final class Constants {
     public static final class OI {
         public static final class Controller {
             public static final int kPort = 2;
+            public static final int kJoystickPort = 0;
 
             // Buttons and triggers
             public static final int X = 1;
