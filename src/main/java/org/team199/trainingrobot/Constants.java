@@ -26,9 +26,10 @@ public final class Constants {
      * subsystems themselves.
      */
     public static final class Drive {
-        public static final int kTalon = 1;
-        public static final int kVictor = 3;
-        public static final int kSparkMax = 5;
+        public static final int kSparkMaxLeft1 = 3; // left
+        public static final int kSparkMaxLeft2 = 4; // left
+        public static final int kSparkMaxRight1 = 5; // right
+        public static final int kSparkMaxRight2 = 6; // right
     }
 
     /**
@@ -37,9 +38,14 @@ public final class Constants {
      */
     public static final class OI {
         public static final class Controller {
-            public static final int kPort = 2;
+            // Joystick 
+            public static final int kJoystickLeft = 0;
+            public static final int kJoystickRight = 1;
+            
+            // Buttons and triggers on the Joystick
+            public static final int leftTrigger = 1;
 
-            // Buttons and triggers
+            // Buttons and triggers on the controller
             public static final int X = 1;
             public static final int A = 2;
             public static final int B = 3;
@@ -54,4 +60,6 @@ public final class Constants {
             public static final int kRunMotorsButton = X;
         }
     }
+
+    
 }
