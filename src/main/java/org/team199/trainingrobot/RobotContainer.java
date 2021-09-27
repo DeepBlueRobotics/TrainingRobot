@@ -1,7 +1,6 @@
 package org.team199.trainingrobot;
 
 import org.team199.trainingrobot.commands.RunMotorsWithJoystick;
-import org.team199.trainingrobot.commands.changeModeCommand;
 import org.team199.trainingrobot.subsystems.Motors;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -20,8 +19,8 @@ public class RobotContainer {
     }
     private void configureButtonBindingsController() {
         
-        motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoystick, rightJoystick));
-        new JoystickButton(leftJoystick, Constants.OI.Controller.leftTrigger).whenPressed(new changeModeCommand(motors));
+        motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoystick, rightJoystick)); 
+        new JoystickButton(leftJoystick, Constants.OI.Controller.leftTrigger).whenPressed(new InstantCommand(motors::changeMode));
     }
 
     public Command getAutonomousCommand() {
