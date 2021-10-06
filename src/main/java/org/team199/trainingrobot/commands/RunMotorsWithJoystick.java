@@ -34,9 +34,9 @@ public class RunMotorsWithJoystick extends CommandBase {
   public void execute() {
     // true is tank, false is arcade
     if (motors.getMode() == Mode.tank)
-      motors.tankRun(leftJoystick.getY(), rightJoystick.getY());
+      motors.tankRun(-leftJoystick.getY(), rightJoystick.getY());
     else
-      motors.arcadeRun(leftJoystick.getY(), leftJoystick.getX());
+      motors.arcadeRun(-leftJoystick.getX(), leftJoystick.getY());
   }
 
   // Called once the command ends or is interrupted.
