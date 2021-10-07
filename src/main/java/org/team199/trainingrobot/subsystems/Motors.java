@@ -51,6 +51,7 @@ public class Motors extends SubsystemBase {
     rightEnc.setPositionConversionFactor(conversion);
     leftSlave.follow(leftMaster);
     rightSlave.follow(rightMaster);
+    rightMaster.setInverted(true);
   }
 
   public void tankRun(double leftSpeed, double rightSpeed) {
@@ -79,6 +80,6 @@ public class Motors extends SubsystemBase {
 
   public void autonomousSpin(double rotation)
   {
-    drive.tankDrive(rotation, rotation);
+    drive.tankDrive(rotation, -rotation);
   }
 }

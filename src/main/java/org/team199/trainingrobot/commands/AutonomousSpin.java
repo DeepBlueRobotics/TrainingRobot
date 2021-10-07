@@ -23,7 +23,7 @@ public class AutonomousSpin extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    motors.autonomousSpin(1);
+    motors.autonomousSpin(0.2);
   }
 
   // Called once the command ends or is interrupted.

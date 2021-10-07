@@ -25,7 +25,7 @@ public class AutonomousDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    motors.tankRun(1, -1);
+    motors.tankRun(0.2, 0.2);
   }
 
   // Called once the command ends or is interrupted.
@@ -38,7 +38,7 @@ public class AutonomousDrive extends CommandBase {
   @Override
   public boolean isFinished() {
     System.err.println(motors.getEnc().getPosition());
-    if (motors.getEnc().getPosition() >= 10) {
+    if (motors.getEnc().getPosition() >= 24) {
       return true;
     } else {
       return false;
