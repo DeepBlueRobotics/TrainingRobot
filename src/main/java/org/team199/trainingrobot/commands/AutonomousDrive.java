@@ -25,7 +25,7 @@ public class AutonomousDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    motors.tankRun(0.2, 0.2);
+    motors.tankRun(0.5, 0.5);
   }
 
   // Called once the command ends or is interrupted.
