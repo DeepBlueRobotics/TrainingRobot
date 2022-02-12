@@ -1,11 +1,11 @@
 package org.team199.trainingrobot;
 
-import org.team199.trainingrobot.commands.RunMotor;
 import org.team199.trainingrobot.subsystems.Motors;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 public class RobotContainer {
@@ -14,10 +14,10 @@ public class RobotContainer {
 
     public RobotContainer() {
         configureButtonBindingsController();
+        motors.setDefaultCommand(new RunCommand(motors::run, motors));
         // set default commands here
     }
     private void configureButtonBindingsController() {
-        new JoystickButton(controller, Constants.OI.Controller.kRunMotorsButton).whenPressed(new RunMotor(motors));
     }
 
     public Command getAutonomousCommand() {
